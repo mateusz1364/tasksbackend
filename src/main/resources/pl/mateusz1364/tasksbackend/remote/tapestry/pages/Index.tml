@@ -1,0 +1,42 @@
+<html t:type="indexLayout" title="Task management"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+<head>
+    <style>
+        div {
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .form-field {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        .large-btn {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <t:form t:id="loginForm">
+        <h2>Tasks Management</h2>
+        <t:textfield t:id="login" class="form-field" validate="required" placeholder="Login"/>
+        <t:passwordfield t:id="password" class="form-field" validate="required" placeholder="Password"/>
+        <t:submit event="signIn" class="btn btn-large btn-primary large-btn" value="Sign in"/>
+    </t:form>
+    <t:pagelink class="btn btn-large btn-primary large-btn" page="SignUp">Sign up</t:pagelink>
+</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  db:
+    image: mariadb:10.5
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=qwerty123
+      - MYSQL_DATABASE=tasks
+      - MYSQL_USER=tasks
+      - MYSQL_PASSWORD=qwerty123
+    ports:
+      - '3306:3306'
+    volumes:
+      - db:/var/lib/mysql
+volumes:
+  db:
+    driver: local

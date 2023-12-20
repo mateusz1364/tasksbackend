@@ -1,0 +1,80 @@
+<html t:type="tasksLayout" title="Task management"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+<head>
+    <style>
+        .task-list-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .task-list-container {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            overflow-y: auto;
+            max-height: 650px;
+            padding: 15px;
+        }
+
+        .task-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #ccc;
+            padding: 10px 30px;
+            margin-bottom: 10px;
+        }
+
+        .task-info {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .task-name {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .btn {
+            margin-left: 10px;
+        }
+
+        .btn-create {
+            width: 100px;
+        }
+
+        .task-create {
+            margin: 20px;
+            align-self: flex-end;
+        }
+    </style>
+</head>
+<body>
+<!-- Wrap the task list and controls in a container -->
+<div class="task-list-wrapper">
+    <div class="task-list-container">
+        <t:loop source="tasks" value="task">
+            <div class="task-row">
+                <div class="task-info">
+                    <span class="task-name">${task.createdAt} - ${task.name}</span>
+                    <span style="margin-bottom: 20px; margin-top: 10px">${task.description}</span>
+                    <span>Reporter: ${task.reporterFirstName} ${task.reporterLastName}</span>
+                    <span>Address: ${task.city} ${task.streetWithNumber}</span>
+                </div>
+                <div>
+                    <t:eventlink class="btn btn-small btn-primary" t:event="update" t:context="task.id">Update
+                    </t:eventlink>
+                    <t:eventlink class="btn btn-small btn-danger" t:event="delete" t:context="task.id">Delete
+                    </t:eventlink>
+                </div>
+            </div>
+        </t:loop>
+    </div>
+    <div class="task-create">
+        <t:pagelink class="btn-create btn btn-small btn-success" page="CreateTask">New Task</t:pagelink>
+    </div>
+</div>
+</body>
+</html>

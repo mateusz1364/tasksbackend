@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  tasks-management:
+    image: "tasks-management:1.0.0"
+    environment:
+      - APP_SECRET=mySecret
+      - DATABASE_URL=jdbc:mariadb://db:3306/tasks
+      - DATABASE_USERNAME=tasks
+      - DATABASE_PASSWORD=qwerty123
+    ports:
+      - "8080:8080"
+    networks:
+      - maria-database_default
+volumes:
+  db:
+    driver: local
+networks:
+  maria-database_default:
+    external: true

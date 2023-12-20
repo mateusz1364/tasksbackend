@@ -1,0 +1,58 @@
+<html t:type="mainLayout" title="Task management"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+<head>
+    <style>
+        div {
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-field {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        .large-btn {
+            width: 120px;
+            margin-right: 10px;
+        }
+
+        .text-field {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <t:form t:id="createTaskForm">
+        <h2>Create a new task</h2>
+        <div>
+            <label>Name</label>
+            <t:textfield t:id="name" validate="required" class="text-field"/>
+            <label>Description</label>
+            <t:textfield t:id="description" validate="required" class="text-field"/>
+            <label>Reporter first name</label>
+            <t:textfield t:id="reporterFirstName" validate="required" class="text-field"/>
+            <label>Reporter last name</label>
+            <t:textfield t:id="reporterLastName" validate="required" class="text-field"/>
+            <label>City</label>
+            <t:textfield t:id="city" validate="required" class="text-field"/>
+            <label>Street with number</label>
+            <t:textfield t:id="streetWithNumber" validate="required" class="text-field"/>
+        </div>
+        <t:submit event="create" class="btn btn-large large-btn btn-success" value="Create"/>
+        <t:pagelink class="btn btn-large btn-primary large-btn" page="Tasks">Cancel</t:pagelink>
+    </t:form>
+</div>
+</body>
+</html>

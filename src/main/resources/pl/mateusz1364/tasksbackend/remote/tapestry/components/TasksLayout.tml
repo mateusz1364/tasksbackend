@@ -1,0 +1,62 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+
+<head>
+    <title>${title}</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .main-container {
+            text-align: center;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .body-container {
+            text-align: center;
+            width: 800px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .alert-container {
+            padding: 0;
+            margin: 0;
+            height: 100px;
+        }
+
+        .logout-container {
+            width: 80px;
+            margin: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="main-container">
+    <div class="header-container">
+        <h2>Tasks</h2>
+        <t:pagelink class="logout-container btn btn-large btn-primary large-btn" page="Logout">Logout</t:pagelink>
+    </div>
+    <div class="body-container">
+        <t:body/>
+    </div>
+    <t:alerts class="alert-container" showDismissAll="false"/>
+</div>
+</body>
+
+</html>

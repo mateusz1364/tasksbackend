@@ -1,0 +1,40 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<head>
+    <title>${title}</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .body-container {
+            text-align: center;
+            width: 450px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .alert-container {
+            padding: 0;
+            margin: 0;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    <div class="body-container">
+        <t:body/>
+    </div>
+    <t:alerts class="alert-container" showDismissAll="false"/>
+</div>
+
+</body>
+</html>
